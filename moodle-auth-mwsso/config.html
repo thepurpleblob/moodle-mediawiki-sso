@@ -1,0 +1,36 @@
+<?php
+
+// set defaults
+if (!isset($config->mwurl)) {
+    $config->mwurl = 'http://localhost/mediawiki';
+}
+?>
+
+
+<table cellspacing="0" cellpadding="5" border="0">
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string('auth_mwssourl_key', 'auth_mwsso') ?>: </td>
+    <td>
+        <input name="mwurl" type="text" size="30" value="<?php echo $config->mwurl ?>" />
+        <?php
+
+        if (isset($err['mwurl'])) {
+            echo $OUTPUT->error_text($err['mwurl']);
+        }
+
+        ?>
+    </td>
+    <td>
+        <?php
+        print_string('auth_mwssourl', 'auth_mwsso');
+        ?>
+    </td>
+</tr>
+
+<?php
+
+print_auth_lock_options($this->authtype, $user_fields, get_string('auth_fieldlocks_help', 'auth'), false, false);
+
+?>
+</table>

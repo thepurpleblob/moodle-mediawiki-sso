@@ -7,9 +7,9 @@ against existing MediaWiki accounts (that have already been created
 by SSO). 
 
 INSTALL
-=======
+-------
 
-1. In MediaWiki
+### In MediaWiki
 
 Copy mediawiki-extensions-moodlesso to $IP/extensions/moodlesso
 
@@ -31,7 +31,7 @@ php update.php
 ...to install the database table.
 
 
-2. In Moodle
+### In Moodle
 
 Copy the moodle-auth-mwsso plugin to auth/mwsso directory.
 
@@ -42,7 +42,7 @@ Manage authentication' enable the MediaWiki plugin (by opening the
 'eye') and then go to its Settings page. There is only one setting, 
 it is the URL of the MediaWiki site.
 
-3. Usage
+### Usage
 
 In a MediaWiki page, simply add.
 
@@ -57,7 +57,7 @@ When the page is rendered just the text appears as a link. Clicking it
 will take you to the Moodle site logged in. If you are not logged into 
 MediaWiki you will, instead, be taken to the login page. 
 
-4. Logging in from Moodle
+### Logging in from Moodle
 
 The MediaWiki users are created in Moodle with their own auth type 'mwsso'.
 No password is recorded in Moodle. If you log into Moodle with one of these
@@ -65,7 +65,7 @@ users authentication will be attempted by Moodle calling a web service
 in the MediaWiki extension. If you convert them to manual users at any time
 you will need to supply a new password
 
-5. Security
+### Security
 
 SSO security is by a one time token which with a time-limited lifespan. Note
 that there is no encryption of data and the trust relationship is defined only
